@@ -117,11 +117,14 @@ arguments 相当用于数组，可循环求和,在不知道个数以及数据类
 	 alert(str.charAt(2))    //做IE兼容
 
 
-
 复制数组
+
 	1.循环，可以复制数组
+
 	2. Array.from(arr1)
+
 	3. [...arr1]
+
 	 var arr1 = [1,2,3,4];
 
 	 var arr2 = Array.from(arr1)  //复制数组
