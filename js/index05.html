@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>事件</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		p{
+			width:100px;
+			height:200px;
+			background: green
+		}
+	</style>
+</head>
+<script>
+	window.onload = function(){
+		var opid = document.getElementById('pid');
+		opid.onmouseover = function(){
+			opid.innerHTML = 'hello'
+		}
+		opid.onmouseout = function(){
+			opid.innerHTML = 'world'
+		}
+
+
+		var oinp1 = document.getElementById('inp1');
+		oinp1.onselect = function(){
+			oinp1.style.background = 'red'
+		}
+		
+	}
+
+//onfocus   onchange  onload
+
+
+</script>
+<body>
+	<input type="text"  id="inp">
+	<button id="btn">按钮</button>
+	<p id=pid></p>
+	<input type="text" id="inp1">
+</body>
+</html>

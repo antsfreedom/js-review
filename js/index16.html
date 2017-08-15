@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src='jquery-1.11.3.js'></script>
+	<style type="text/css" media="screen">
+		.box{
+			width:100px;
+			height:100px;
+			background: red
+		}
+		
+		.con{
+			margin:10px;
+			padding-top: 5px;
+			width:200px;
+			height: 200px;
+			background: pink
+		}
+		.div2{
+			width:100px;
+			height:100px;
+			background: gray
+		}
+	</style>
+	<script>
+		// $(function(){
+		// 	$('.box').click(function(){
+		// 		$(this).css({background:'green'})
+		// 		// $(this).get(0).style.background = 'yellow'     //js/jquery  混用，尽量不要混合用
+		// 	})
+		// })
+
+//js写法
+		// window.onload = function(){
+		// 	var obox = document.getElementById('son');
+		// 	obox.onclick = function(){
+		// 		this.style.background = 'orange'
+		// 	}
+		// }
+
+//获取类数组长度
+// $(function(){
+// 	var size = $('li').size()
+	// alert(size)	
+	// var length = $('.ul li').length
+	// alert(length)
+	// $('.ul li').eq(size-1).css({background:'orange'})    //最后一个  
+	// $('.ul li').last().css({background:'orange'})				//最后一个
+// 	$('.ul li').first().css({background:'orange'})					//第一个
+
+// })
+
+//获取宽度
+
+	// $(function(){
+		// console.log($('.con').outerWidth())   //padding和content 的值   宽度
+		// console.log($('.con').width())     //只包括content 的值
+		// console.log($('.con').outerWidth(true))    //包括padding content margin
+		// console.log($('.con').outerHeight())       //获取高度
+		// 	console.log($('.con').innerHeight()) 
+		// })
+
+
+//获取文本节点
+
+		// $(function(){
+		// 	// console.log($('.div1').text())     //仅仅获取文本内容
+		// 	console.log($('.div1').html())     //获取的不仅是文本内容，也包括里面的标签
+		// 	// $('.div1').text('<p>p tag</p>')    //text 无法渲染标签
+		// 	$('.div1').html('<p>p tag</p>')    //html 可以渲染标签，将标签转义
+		// })
+
+//删除节点
+	$(function(){
+		// $('.div2').remove()   //删除
+		// $('.div2').detach()
+
+		// var box = $('.div2').remove();      
+		// $('body').append(box)
+
+		//等价于 var box=$('.div2')
+		// $('.div2').remove()
+		// $('body').append(box)
+		// $('.div1').html('&lt;h1 &gt;哈哈哈&lt;/h1 &gt;')
+		$('.div1').text('&lt;h1 &gt;哈呵呵&lt;/h1 &gt;')
+	})
+
+	</script>
+</head>
+<body>
+	<div class='box' id='son'>
+		
+	</div>
+	<ul class='ul'>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+	<p class="con"></p>
+	<div class="div1">学习<span>js高级语言</span></div>
+	<div class="div2">hahah</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>异常捕获</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		p{
+			width:100px;
+			height:200px;
+			background: green
+		}
+	</style>
+</head>
+<script>
+	window.onload = function(){
+		var oinp = document.getElementById('inp');
+		var obtn = document.getElementById('btn');
+		obtn.onclick = function(){
+			try{
+				if(oinp.value ==""){
+					throw '不能为空'
+				}
+			}catch(err){ 
+				alert(err)
+			}
+		}
+	// try{
+	// 	if(){
+	// 		throw xxxx
+	// 	}
+	// }catch(err){
+	// 		alert(err)
+	// }
+
+
+
+</script>
+<body>
+	<input type="text"  id="inp">
+	<button id="btn">按钮</button>
+</body>
+</html>

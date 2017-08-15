@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src='jquery-1.11.3.js'></script>
+	<style type="text/css" media="screen">
+		ul li{
+			list-style: none;
+		}
+		.box{
+			position: relative;
+			width:300px;
+			height: 200px;
+			margin:0 auto;
+			overflow: hidden;
+			border:1px solid #000;
+		}
+		.all{
+			position: absolute;
+			left:0;
+			top:0;
+			width:1500px;
+			height:200px;
+		}
+		.pic{
+			width:300px;
+			height: 200px;
+		}
+	/*	ul {
+			font-size: 0
+		}
+		ul li{
+			width:300px;
+			height:200px;
+			display: inline-block;
+		}*/
+		.pic:nth-child(1){
+			background: green
+		}
+		.pic:nth-child(2){
+			background: yellow
+		}
+		.pic:nth-child(3){
+			background: red
+		}
+		.pic:nth-child(4){
+			background:orange
+		}
+	</style>
+	<script>
+		$(function(){
+			var index =0;
+			var length = $('.pic').length;
+
+		})
+
+
+	// 	for (var i = 0; i < 5; i++) {
+	//   setTimeout(function() {
+	//     console.log(i);
+	//   }, 1000 * i);
+	// }
+
+// i = 0;
+// setTimeout(function() {
+//   console.log(i);
+//   }, 1000 * i);
+// }
+
+
+	// for (var i = 0; i < 5; i++) {
+	// 	(function(i){
+	// 		 setTimeout(function() {
+	//     		console.log(i);
+	// 		 }, 1000 * i);
+	// 		})()	 	 
+	// }	
+
+
+	// for (var i = 0; i < 5; i++) {	
+	// 		 setTimeout((function() {
+	//     		console.log(i);
+	// 		 })(), 1000 * i);
+	// 		} 	
+
+	setTimeout(function() {
+	  console.log(1)
+	}, 0);
+	new Promise(function executor(resolve) {
+	  console.log(2);
+	  for( var i=0 ; i<10000 ; i++ ) {
+	    i == 9999 && resolve();
+	  }
+	  console.log(3);
+	}).then(function() {
+	  console.log(4);
+	});
+	console.log(5); 
+
+	</script>
+</head>
+<body>
+	<div class='box'>
+		<div class='all'>
+			<!-- <ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul> -->
+			<div class='pic'></div>
+			<div class='pic'></div>
+			<div class='pic'></div>
+			<div class='pic'></div>
+		</div>
+	</div>
+</body>
+</html>

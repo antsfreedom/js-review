@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src ='jquery-1.7.2.min.js'></script>
+	<script src ='jquery.color.js'></script>
+	<style type="text/css" media="screen">
+		/*div{
+			width:200px;
+			height:200px;
+			background: red
+		}*/
+
+		.son{
+			width:100px;
+			height: 100px;
+			background: pink;
+		}
+		.box{
+			width:100px;
+			height:100px;
+			background: orange
+		}
+		.active{
+			background: blue;
+		}
+		.box.ddd{
+			background: green;
+		}
+	</style>
+	<script>
+		$(function(){
+
+	//动画
+			// alert($('.div1').css('backgroundColor'))
+			// $('.div1').css({backgroundColor:'green'})
+			// $('.div1').css({backgroundColor:'green',fontSize:'30px'})
+			// $('.div1').animate({
+			// 	width:'300px'
+			// },1000).animate({
+			// 	height:'300px'
+			// },1000)
+			
+			// $('.btn').click(function(){
+			// 	$('.div1').stop(true)
+				// $('.div1').stop(true,true)     //第一个动画执行到位
+				// $('.div1').finish();		  //jquery 版本低，无法运行
+			// })
+			// $('.son').click(function(){
+			// 	$(this).addClass('active')
+			// })
+			$('.box').click(function(){
+				$(this).get(0).className +=' ddd'	   			
+			})
+
+		})
+	</script>
+</head>
+<body>
+<button class="btn">stop</button>
+	<div class="div1">
+		和收拾收拾所所
+	</div>
+	<p class="son"></p>
+	<div class="box"></div>
+</body>
+</html>

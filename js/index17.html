@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src=jquery-1.11.3.js></script>
+	<style type="text/css" media="screen">
+		.box{
+			width: 400px;
+			height: 400px;
+			background: green;
+		}
+		.son{
+			width:200px;
+			height: 200px;
+			background: pink
+		}
+	</style>
+	<script>
+	//获取父节点
+		// $(function(){
+		// 	$('.son').parent().css({background:'orange'})    //注意与parents的区别，parents()从自身的父节点开始向上遍历，返回所有祖先节点，并根据选择器对这些节点进行筛选，最终返回的jQuery对象可能包含0、1或者多个对象  ,而parent它只向上搜索一层。
+		// 	// $('.son').closest('div').css({background:'red'})   //closest()从自身开始向上遍历，直到找到一个适合的节点，返回的jQuery对象包含0个或者1个对象；
+		// })
+
+	//兄弟节点 siblings  /next
+		// $(function(){
+			// $('.one').siblings().css({background:'red'})
+			// $('.one').next().css({background:'red'})    //next只返回一个节点，即下一个
+			// $('.one').nextAll().css({background:'red'})    //nextAll 可以返回一组节点，在nextAll()里可以进行传参 ，进行过滤。
+			// $('.one').nextUntil('.c').css({background:'green'})   //可传参亦可不传参，若传参直到哪一个终止，不包括传参的
+			// $('li').css({background:'orange'}).filter('.b').css({background:'pink'})
+			// $('li').not('.b').css({background:'pink'})
+		// })
+
+	//装箱、拆箱	
+		$(function(){
+			// $('span').wrap('<div>')    //给每一个span标签加一个div			
+			// $('span').wrapAll('<div>')    //将所有span标签加进一个div里，感觉此方法不常用
+			// $('span,p').wrapAll('<div>')
+			// $('span').unwrap('<div>')     //body不允许拆  
+
+			// $('b').unwrap('<div>').unwrap('<div>')
+
+			// $('.two').prev().css({background:'red'})
+			$('ul.level-2').find('li').css('background-color', 'red');  
+			    
+		})
+	</script>
+</head>
+<body>
+	<div class="box">
+		<div class='son'></div>
+	</div>
+	<ul>
+		<li class='one'>1</li>
+		<li class='a'>2</li>
+		<li class='b'>3</li>
+		<li class='c'>4</li>
+		<li class='d'>5</li>
+	</ul>
+	<div>
+		<span>1111</span>
+		<p>2222</p>
+		<span>4444</span>
+		<span>33333</span>		
+	</div>
+
+	<div>
+		<div>
+			<b></b>
+		</div>
+		<div>
+			<b></b>
+		</div>
+		<div>
+			<b></b>
+		</div>
+	</div>
+
+
+<ul class="level-1">  
+    <li class="item-i">I</li>  
+    <li class="item-ii">II  
+        <ul class="level-2">不包括自己  
+            <li class="item-a">A</li>  
+            <li class="item-b">B  
+                <ul class="level-3">  
+                    <div class="item-1">1</div>  
+                    <div class="item-2">2</div>  
+                    <div class="item-3">3</div>  
+                </ul>  
+            </li>  
+            <li class="item-c">C</li>  
+        </ul>  
+    </li>  
+    <li class="item-iii">III</li>  
+</ul> 
+
+</body>
+</html>

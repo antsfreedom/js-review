@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{
+			margin:0;
+			padding:0;
+		}
+		ul li{
+			float:left;
+			margin:10px;
+			list-style: none;
+			cursor:pointer;
+		}
+		li:hover{
+			color:blue;
+		}
+		ul{
+			float:right;
+		}
+		#page{
+			position: fixed;
+			width:100%;
+			height:600px;
+			background: rgba(0,0,0,0.4);
+			display: none
+		}
+		#login{
+			position: absolute;
+			left:0;
+			right:0;
+			top:0;
+			bottom:0;
+			margin:auto;
+			width:300px;
+			height:400px;
+			background: white;
+
+		}
+		.login-head{
+			line-height: 30px;
+		}
+		span{
+			margin-left: 150px;
+		}
+
+	</style>
+	<script>
+		window.onload = function () {
+			var login = document.getElementsByTagName('li')[3];
+			var opage = document.getElementById('page');
+			var ospan = document.getElementById('spa')
+			login.onclick = function(){
+				opage.style.display = 'block';
+			}
+			ospan.onclick = function(){
+				opage.style.display = 'none';
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul>
+		<li>新闻</li>
+		<li>地图</li>
+		<li>贴吧</li>
+		<li>登录</li>
+		<li>设置</li>
+	</ul>
+	<div id="page">
+		<div id='login'>
+			<div class="login-head">登录百度账号<span id='spa'>×</span></div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>选项卡</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		div{
+			width:200px;
+			height:200px;
+			background:orange;
+			display: none;
+		}
+		.active{
+			background:orange
+		}
+
+	</style>
+	<script>
+		window.onload = function(){
+			var obtn =document.getElementsByTagName('input');
+			var odiv =document.getElementsByTagName('div');	
+			// for(var i=0;i<obtn.length;i++){
+			// 	obtn[i].index = i;
+			// 	// console.log(obtn[i].index)
+			// 	obtn[i].onclick = function(){
+			// 		for(var i=0;i<obtn.length;i++){
+			// 			obtn[i].className='';
+			// 			odiv[i].style.display ='none'
+			// 		}
+			// 		this.className = 'active'
+			// 		odiv[this.index].style.display='block'
+			// 	}
+			// }		
+
+			for(let i=0;i<obtn.length;i++){
+				
+				obtn[i].onclick = function(){
+					for(let i=0;i<obtn.length;i++){
+					obtn[i].className='';
+					odiv[i].style.display ='none'
+				}
+					this.className = "active";
+					odiv[i].style.display = "block"
+				}
+			}
+			
+		}
+	</script>
+</head>
+<body>	
+		<input type="button"  value="按钮1">
+		<input type="button"  value="按钮2">
+		<input type="button"  value="按钮3">
+		<div style="display: block">1234</div>
+		<div>5668</div>
+		<div>9876</div>		
+</body>
+</html>

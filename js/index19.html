@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src =jquery-1.11.3.js></script>
+	<script>
+		$(function(){
+			// console.log($('div').text())
+			// console.log($('input').val())
+			// $('.links').attr('href','https://www.baidu.com')
+			// $('.links').attr('href','https://www.baidu.com')
+			// $('.links').attr('data-value','https://www.baidu.com')
+			 $('.links').data('data-value','https://www.baidu.com')
+			 console.log($('.links').data())
+
+			$('img').attr('src','images/2.jpg')
+			
+		})
+	</script>
+</head>
+<body>
+	<div>我是text</div>
+	<input type="text" value="还动都不动">
+	<img src="images/1.jpg" alt="">
+	<a class='links' href="" >百度</a>
+</body>
+</html>

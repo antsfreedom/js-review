@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>复选框勾选</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		#div1 input{
+			display: block;
+			margin:5px;
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			var obtn1 = document.getElementById('btn1');
+			var obtn2 = document.getElementById('btn2');
+			var obtn3 = document.getElementById('btn3');
+			var odiv1 = document.getElementById('div1');
+			var oinp = odiv1.getElementsByTagName('input');
+			obtn1.onclick = function(){
+				for(var i=0;i<oinp.length;i++){
+					oinp[i].checked = true;
+				}
+			}
+			obtn2.onclick = function(){
+				for(var i=0;i<oinp.length;i++){
+					oinp[i].checked = false;
+				}
+			}
+			obtn3.onclick = function(){
+				for(var i=0;i<oinp.length;i++){
+					if(oinp[i].checked == true){
+						oinp[i].checked = false;
+					}else{
+						oinp[i].checked = true;
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="全选" id='btn1'>
+	<input type="button" value="不选" id='btn2'>
+	<input type="button" value="反选" id='btn3'>
+	<div id=div1>
+		<input type="checkbox" name="">
+		<input type="checkbox" name="">
+		<input type="checkbox" name="">
+		<input type="checkbox" name="">
+		<input type="checkbox" name="">
+		<input type="checkbox" name="">
+		<input type="checkbox" name="">
+		<input type="checkbox" name="">
+	</div>
+</body>
+</html>

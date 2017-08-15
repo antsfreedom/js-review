@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src='jquery-1.11.3.js'></script>
+	<style type="text/css" media="screen">
+	*{
+		margin:0;
+		padding: 0
+	}
+		div{
+			width:100px;
+			height:100px;
+			background: red;
+			float:left;
+			display: none;
+		}
+		span{
+			background: green
+		}
+	</style>
+	<script>
+		$(function(){
+			$('#son').hover(function(){
+				$('#box').stop().show(300)
+			},function(){
+					$('#box').stop().hide(300)
+			})
+		})
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+	<span id='son'>展开</span>
+</body>
+</html>

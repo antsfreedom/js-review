@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		var str = 'hello'
+		String.prototype.repeat = function(n){
+			var sum ='';
+			for(var i=0;i<n;i++){
+				sum+=this;
+			}
+			return sum
+		}
+		alert(str.repeat(3))
+	</script>
+</body>
+</html>

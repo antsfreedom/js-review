@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		p{
+			width:200px
+			height:200px;
+			display: none
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			var oipt= document.getElementById('ipt');
+			var opid = document.getElementById('pid');
+			oipt.onmouseover = function(){
+				opid.style.display = 'block';
+			}
+			oipt.onmouseout = function(){
+				opid.style.display = 'none';
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<input type="checkbox" name="" id="ipt">
+	<p id="pid">十三个到时看是空的</p>
+</body>
+</html>
