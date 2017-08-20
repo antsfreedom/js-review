@@ -109,6 +109,20 @@
 	 	return n1-n2
 	 }))
 
+## 数组的随机排序 ##
+
+	var arr=[1,2,40,3,4,80,5,6,7,8,10,20]
+	arr.sort(function(){
+		return Math.random()-0.5
+	})
+	console.log(arr)
+
+## 颠倒数组元素位置 ##
+
+	var arr=[3,6,20，1,8,33,5]
+	arr.reverse()
+	console.log(arr)
+
 ## 字符串有长度且可获取其索引 ##
 
 	 var str = "26383922"
@@ -435,5 +449,90 @@ jquery写法
 	// document.createDocumentFragment()
 
 
+
+## 表格应用 ##
+
+	获取：
+		var otab = document.getElementById("tab1");
+	
+		 var name = otab.getElementsByTagName("tbody")[0].getElementsByTagName("tr")[2].getElementsByTagName("td")[1].innerHTML;
+		 alert(name)
+
+		//简写
+		var name = otab.tBodies[0].rows[2].cells[1].innerHTML;
+		alert(name)
+
+
+
+..................................................
+
+	添加行
+		 var oinp1 = document.getElementById("inp1");
+		 var oinp2 = document.getElementById("inp2");
+		 var obtn1 = document.getElementById("btn1");
+		 obtn1.onclick = function(){
+		 	var otr = document.createElement("tr");
+		
+		 	var otd = document.createElement("td");
+		 	otd.innerHTML = otab.tBodies[0].rows.length+1;
+		 	otr.appendChild(otd);   //序号
+		
+		 	var otd = document.createElement("td"); 
+		 	otd.innerHTML = oinp1.value;
+		 	otr.appendChild(otd)
+		
+		 var otd = document.createElement("td");
+		 otd.innerHTML = oinp2.value;
+		 otr.appendChild(otd);
+		 otab.tBodies[0].appendChild(otr)	
+		 }
+
+...............................................................
+
+	忽略大小写、模糊搜素
+
+		var oipt = document.getElementById("ipt");
+		var obtn = document.getElementById("btn");
+		obtn.onclick = function(){
+		for(var i=0;i<otab.tBodies[0].rows.length;i++){
+			var Txt = otab.tBodies[0].rows[i].cells[1].innerHTML;
+			// if(Txt.toLowerCase()== oipt.value.toLowerCase())  //大小写
+			if(Txt.search(oipt.value)!=-1)      //模糊
+			{
+				otab.tBodies[0].rows[i].style.background = "red"
+			}else{
+				otab.tBodies[0].rows[i].style.background = ""
+			}
+		}
+	}
+
+	备注：search();返回的是字符串的位置，如果没有找到则返回-1；
+	var str ="abiss"
+	alert(atr.search(b))     //返回1
+
+
+...............................................................
+
+	多关键字搜索
+		var str = "abcdef"
+		var arr = str.split(" ");   //以空格分割字符串，返回数组
+		console.log(arr)   
+	
+		var oipt = document.getElementById("ipt");
+		var obtn = document.getElementById("btn");
+		obtn.onclick = function(){
+		for(var i=0;i<otab.tBodies[0].rows.length;i++){
+			var Txt = otab.tBodies[0].rows[i].cells[1].innerHTML;
+			var Val = oipt.value;
+			var arr = Val.split(" ")
+			otab.tBodies[0].rows[i].style.background = " "
+			for(var j=0;j<arr.length;j++){
+				if(Txt.search(arr[j])!=-1)	
+				{
+					otab.tBodies[0].rows[i].style.background = "red"
+				}		
+			}
+		}
+	}
 
 

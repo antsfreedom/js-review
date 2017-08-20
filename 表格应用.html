@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+<!-- 姓名：<input type="text" name="" id="inp1">
+年龄：<input type="text" name="" id="inp2">
+<button id="btn1">add</button> -->
+<input type="text" id="ipt">
+<button id="btn">搜索</button>
+<table border="1" width="100%" id="tab1">
+	<thead>
+		<tr>
+			<th>序号</th>
+			<th>姓名</th>
+			<th>年龄</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>red</td>
+			<td>33</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>张三</td>
+			<td>29</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>李四</td>
+			<td>27</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>王五</td>
+			<td>36</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>麻六</td>
+			<td>16</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>赵七</td>
+			<td>22</td>
+		</tr>
+		
+	</tbody>
+</table>
+
+
+<button id="btn1">移动</button>
+	<ul id="ul1" style="background: green">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+</html>
+<script type="text/javascript">
+	//表格的应用
+	var otab = document.getElementById("tab1");
+	var txt = otab.tBodies[0].rows
+	// var name = otab.getElementsByTagName("tbody")[0].getElementsByTagName("tr")[2].getElementsByTagName("td")[1].innerHTML;
+	// alert(name)
+
+	//简写
+	// var name = otab.tBodies[0].rows[2].cells[1].innerHTML;
+	// alert(name)
+
+	//添加行
+// var oinp1 = document.getElementById("inp1");
+// var oinp2 = document.getElementById("inp2");
+// var obtn1 = document.getElementById("btn1");
+// obtn1.onclick = function(){
+// 	var otr = document.createElement("tr");
+
+// 	var otd = document.createElement("td");
+// 	otd.innerHTML = otab.tBodies[0].rows.length+1;
+// 	otr.appendChild(otd);   //序号
+
+// 	var otd = document.createElement("td"); 
+// 	otd.innerHTML = oinp1.value;
+// 	otr.appendChild(otd)
+
+// var otd = document.createElement("td");
+// otd.innerHTML = oinp2.value;
+// otr.appendChild(otd);
+// otab.tBodies[0].appendChild(otr)	
+// }
+
+
+//忽略大小写
+
+// var oipt = document.getElementById("ipt");
+// var obtn = document.getElementById("btn");
+// 	obtn.onclick = function(){
+// 	for(var i=0;i<otab.tBodies[0].rows.length;i++){
+// 		var Txt = otab.tBodies[0].rows[i].cells[1].innerHTML;
+// 		if(Txt.toLowerCase()== oipt.value.toLowerCase())  //大小写		
+// 		{
+// 			otab.tBodies[0].rows[i].style.background = "red"
+// 		}else{
+// 			otab.tBodies[0].rows[i].style.background = ""
+// 		}
+// 	}
+// }
+
+// ......................................................
+//模糊搜索
+
+// var oipt = document.getElementById("ipt");
+// var obtn = document.getElementById("btn");
+// 	obtn.onclick = function(){
+// 	for(var i=0;i<otab.tBodies[0].rows.length;i++){
+// 		var Txt = otab.tBodies[0].rows[i].cells[1].innerHTML;
+// 		otab.tBodies[0].rows[i].style.background = " "
+// 		if(Txt.search(oipt.value)!=-1)      //模糊		
+// 		{
+// 			otab.tBodies[0].rows[i].style.background = "red"
+// 		}else{
+// 			otab.tBodies[0].rows[i].style.background = ""
+// 		}
+// 	}
+// }
+
+
+//多关键字搜索
+	var str = "abcdef"
+	var arr = str.split(" ");   //以空格分割字符串，返回数组
+	console.log(arr)   
+
+	var oipt = document.getElementById("ipt");
+	var obtn = document.getElementById("btn");
+	obtn.onclick = function(){
+	for(var i=0;i<otab.tBodies[0].rows.length;i++){
+		var Txt = otab.tBodies[0].rows[i].cells[1].innerHTML;
+		var Val = oipt.value;
+		var arr = Val.split(" ")
+		// otab.tBodies[0].rows[i].style.background = " "
+		for(var j=0;j<arr.length;j++){
+			if(Txt.search(arr[j])!=-1)	
+			{
+				otab.tBodies[0].rows[i].style.background = "red"
+			}else{
+				
+			}		
+		}
+	}
+}
+
+
+var oul1 = document.getElementById("ul1");
+var obtn1 = document.getElementById("btn1");
+obtn1.onclick = function(){
+	var oli = oul1.children[0];
+	oul1.appendChild(oli)
+}
+
+
+</script>
